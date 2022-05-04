@@ -1,0 +1,98 @@
+<div class="wholelist">
+    <tr>
+        <th>
+        <form method="GET">
+        <div class="search-container">
+            <input class="searchbox" type="text" name="search-task" placeholder="🔎Search" value="{{search_input}}" />
+            <button class="searchbtn" type="sumbit" value="Sumbit">Search</button>
+        </div>
+        </form>    
+
+<div class="taskdetails-container">
+<div class="addtaskbox">
+<a class="addtask" href="{% url 'task-create'%} ">Add Task</a>
+</div>
+
+    <h3 class="itemhead">Items in the Lists</h3>
+    <p class="countitem"> <b class="itmecount"> {{count}} </b> Incomplete Tasks in your lists.</p>
+    
+        </th>
+    </tr>
+    <tr>
+    <div class="itme-list">
+    {% for task in tasks %}
+    
+    <td>
+        <div class="itmelistbox" data-position="{{task.pk}}">
+            {% if task.complete %}
+            <i><s><h6 class="tasktitle">{{task.title}}</h6></i></s>
+            <div class="taskworks">
+                <div class="taskworkcustome">
+                <a id="taskview" href="{% url 'task' task.id %}">&#128065</a>
+                </div>
+                <div class="taskworkcustome">
+                <a id="taskedit" href="{% url 'task-update' task.id %}">&#9998</a>
+                </div>
+                <div class="taskworkcustome">
+                <a id="taskdel" href="{% url 'task-delete' task.id %}">&#128465</a>
+                </div>
+            </div>    
+            {% else %}
+            <h6 class="tasktitle">{{task.title}}</h6>
+            <div class="taskworks">
+                <div class="taskworkcustome">
+                <a id="taskview" href="{% url 'task' task.id %}">&#128065</a>
+                </div>
+                <div class="taskworkcustome">
+                <a id="taskedit" href="{% url 'task-update' task.id %}">&#9998</a>
+                </div>
+                <div class="taskworkcustome">
+                <a id="taskdel" href="{% url 'task-delete' task.id %}">&#128465</a>
+                </div>
+            </div>    
+
+            {% endif %}
+            
+        </div>
+    </div>
+  
+    {% empty %}
+    <h3>No items</h3>
+    {% endfor %}
+    </td>
+</tr>
+
+{% else %}
+</div>
+
+    <h2>Dont Have Acoount Just signup or register</h2>
+
+    <a href="{% url 'register' %}">register</a>
+    <a href="{% url 'login' %}">Login</a>
+
+{% endif %}
+
+
+{% endblock content %}
+</div>
+
+
+
+.searchbtn{
+    border-top-right-radius:20px;
+    border-bottom-left-radius:20px;
+    padding:5px;
+    border-color:black;
+    color:black;
+    background-color:orange;
+    margin-left:15px;
+    
+}
+.searchbtn:hover{
+    background-color:black;
+    color:orange;
+    border-color:orange;
+
+}
+
+<button type="sumbit" value="Sumbit"></button>

@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h2>Details of the Task </h2>
+<hr></hr>
+<div class="description">
+<h3>Your Task Name is: <i class="ans">{{tasks.title}}</i></h3>
+<h3>The task Description is: <i class="ans">{{tasks.description|default:"none"}}<i></h3>
+
+
+{% if tasks.complete %}
+    <h3>Your Task status is completed</h3> 
+{% else %}
+     <h3>Your Task status is still in progress</h3>
+{% endif %} 
+<div class="backbtn">
+    <a id="backbtn" href="{% url 'tasks'%}">&#8592</a>
+</div>
+
+{% endblock content %}
+</div>

@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+
+<a href="{% url 'register' %}">register</a>
+<a href="{% url 'login' %}">Login</a>
+
+{% block content %}
+
+<h1>hello from home via main</h1>
+
+    <h5>hello {{name}} </h5>
+    <h4>hello {{email}} </h4>
+
+    {% if user.is_authenticated %}
+
+    {% for ls in form  %}
+
+    <a href="{% url 'create-item' ls.id  %}" >
+        {{ls.name}}
+        {{ls.id}}
+        <br></br
+    </a>
+    
+    {% endfor %}
+
+    <a href="{%  url 'create-todo' %}">create</a>
+    <a href="{% url 'logout' %}">Logout</a>
+
+    {% else %}
+    <a href="{% url 'register' %}">register</a>
+    <a href="{% url 'login' %}">Login</a>
+
+    {% endif %}
+   
+    
+
+    
+{% endblock content %}
+
+

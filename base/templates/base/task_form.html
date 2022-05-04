@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h2 class="taskcreate">Create your Task</h2>
+<hr></hr>
+<div class="taskcreateform">
+<div class="backbtn">
+<a id="backbtn" href="{% url 'tasks'%}">&#8592</a>
+</div>
+<form action="" method="POST">
+    <div class="createtaskform">
+    {% csrf_token %}
+
+    {{form.as_p}}
+
+    <button class="sumbitbtn" type="submit" value="Submit">Sumbit</button>
+    </div>
+</form>
+
+{% endblock content %}
+</div>

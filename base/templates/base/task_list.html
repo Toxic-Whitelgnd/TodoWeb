@@ -1,0 +1,102 @@
+
+{% extends 'main.html' %}
+
+
+
+{% block content %}
+
+
+<div class="header-container">
+
+    {% if user.is_authenticated %}
+
+    <div class="ln">
+        <p class="welcome">Hello  <b id="username"> {{request.user.username}}</b>!</p> 
+        <a id="logoutbtn" href="{% url 'logout' %}">Logout</a>
+    </div>
+</div>
+
+<hr></hr>
+
+<div class="wholelist">
+<form method="GET">
+    <div class="search-container">
+        <input class="searchbox" type="text" name="search-task" placeholder="🔎Search" value="{{search_input}}" />
+        <button class="searchbtn"   type="sumbit" value="Sumbit">Search</button>
+        
+    </div>
+</form>    
+
+<div class="addtaskbox">
+<a class="addtask" href="{% url 'task-create'%} ">Add Task</a>
+</div>
+
+<table class="tablecus">
+    <tr class="lsheader">
+        <th>Item Lists
+       <p class="countitem"> <b class="itmecount"> {{count}} </b> Incomplete Tasks in your lists.</p></th>
+       
+    </tr>
+    
+    {% for task in tasks %}
+
+    {% if task.complete %}
+    <div class="itmeliststab1">
+        <tr class="itmeliststab">
+        
+            <td class="tasktitle"><i><s><h6 class="tasktitle">{{task.title}}</s></i></h6></td>
+            <td><div class="taskworkcustome">
+                <a id="taskview" href="{% url 'task' task.id %}">&#128065</a>
+                </div>  
+            </td>
+            <td><div class="taskworkcustome">
+                <a id="taskedit" href="{% url 'task-update' task.id %}">&#9998</a>
+                </div>
+            </td>
+            <td><div class="taskworkcustome">
+                <a id="taskdel" href="{% url 'task-delete' task.id %}">&#128465</a>
+                </div>
+            </td>
+       
+        </tr>
+    </div>
+    {% else %}
+    <div class="itmeliststab1">
+    <tr class="itmeliststab">
+        
+            <td class="tasktitle"><h6 class="tasktitle">{{task.title}}</h6></td>
+            <td><div class="taskworkcustome">
+                <a id="taskview" href="{% url 'task' task.id %}">&#128065</a>
+                </div>  
+            </td>
+            <td><div class="taskworkcustome">
+                <a id="taskedit" href="{% url 'task-update' task.id %}">&#9998</a>
+                </div>
+            </td>
+            <td><div class="taskworkcustome">
+                <a id="taskdel" href="{% url 'task-delete' task.id %}">&#128465</a>
+                </div>
+            </td>
+        
+        </tr>
+    </div>  
+    {% endif %}
+   
+    {% empty %}
+        <h2>No items</h2>
+    {% endfor %}
+    
+
+</table>
+</div>
+
+{% else %}
+</div>
+
+<h2>Dont Have Acoount Just signup or register</h2>
+
+<a href="{% url 'register' %}">register</a>
+<a href="{% url 'login' %}">Login</a>
+
+{% endif %}
+{% endblock content %}

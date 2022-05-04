@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+
+
+
+{% block content %}
+<div  class="loginform">
+<h1 class="loginheader">Login</h1>
+
+<hr></hr>
+
+<div class="upform">
+<form method="POST" action="">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="sumbitbtn" type="submit">Login</button>
+</form>
+</div>
+<p class="createacc">Dont have account Create one <a class="here" href="{% url 'register' %}" target="_blank">here</a>.</p>
+
+
+{% endblock content %}
+</div>
+

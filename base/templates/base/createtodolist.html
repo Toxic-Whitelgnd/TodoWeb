@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<form method="POST" action="">
+
+    {% csrf_token %}
+    <label for="createtodolist">Create a Todolist</label>
+    <input type="text" name="name" >
+    <button type="submit" name="todobtn">Create</button>
+
+</form>
+
+
+
+{% endblock content %}

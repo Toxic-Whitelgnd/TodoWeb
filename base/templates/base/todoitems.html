@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <h2>in todolists</h2>
+    <h2>{{ti.name}}</h2>
+
+    
+    <form method="POST" action="">
+        {% csrf_token %}
+        <input type="text" name="text">
+        <button type="submit" name="add-btn">additem</button>
+
+        
+    </form>
+    {% for a in i  %}
+    
+    <p>{{a.text}}</p>
+    
+    {% endfor %}
+
+  
+
+{% endblock content %}
+    
+
