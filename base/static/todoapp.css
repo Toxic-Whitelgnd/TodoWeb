@@ -59,6 +59,10 @@ body {
   background-color: black;
 }
 
+.footer p {
+  color: whitesmoke;
+}
+
 /* for home pages */
 .boxxcontainer {
   background-color: #15d6a6;
@@ -77,6 +81,32 @@ body {
           justify-content: center;
   margin-left: 320px;
   margin-bottom: 50px;
+}
+
+.boxxcontainer-bxx {
+  height: auto;
+  width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #4ac7a8;
+  padding: 20px;
+  border-radius: 25px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 320px;
+  margin-bottom: 50px;
+  row-gap: 20px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .link-effect-10 a {
@@ -172,6 +202,10 @@ body {
   padding: 10px;
 }
 
+a.button.four {
+  text-align: end;
+}
+
 a.button.four:before, a.button.four:after {
   content: '';
   position: absolute;
@@ -195,6 +229,109 @@ a.button.four:hover:after, a.button.four:hover:before {
   width: 40%;
   -webkit-transition: width .2s ease;
   transition: width .2s ease;
+}
+
+.link-effect-14 a {
+  color: black;
+  margin: 0 20px;
+  padding: 10px 20px;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  display: inline-block;
+  -webkit-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+
+.link-effect-14 a span::before {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  -webkit-transition: .3s;
+  transition: .3s;
+  opacity: 0;
+}
+
+.link-effect-14 a span::after {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  -webkit-transition: .3s;
+  transition: .3s;
+  opacity: 0;
+}
+
+.link-effect-14 a::before {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-right: 2px solid white;
+  border-top: 2px solid white;
+  -webkit-transition: .3s;
+  transition: .3s;
+  opacity: 0;
+}
+
+.link-effect-14 a::after {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  -webkit-transition: .3s;
+  transition: .3s;
+  opacity: 0;
+}
+
+.link-effect-14 a:hover {
+  color: white;
+}
+
+.link-effect-14 a:hover::before {
+  opacity: 1;
+  right: 5px;
+  top: 5px;
+}
+
+.link-effect-14 a:hover::after {
+  opacity: 1;
+  left: 5px;
+  bottom: 5px;
+}
+
+.link-effect-14 a:hover span::before {
+  opacity: 1;
+  left: 5px;
+  top: 5px;
+}
+
+.link-effect-14 a:hover span::after {
+  opacity: 1;
+  right: 5px;
+  bottom: 5px;
 }
 
 /* for header container */
@@ -222,6 +359,16 @@ h2 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.welcome {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-right: 20px;
 }
 
 #username {
@@ -1146,73 +1293,5 @@ label {
 
 label:after {
   content: ": ";
-}
-
-.back-wrapper {
-  position: fixed;
-  top: 20%;
-  left: 0%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.link_wrapper {
-  position: relative;
-  top: 20%;
-  left: 0%;
-}
-
-#b {
-  display: block;
-  width: 100px;
-  height: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  background: #333;
-  text-align: center;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border: 3px solid #333;
-  -webkit-transition: all .35s;
-  transition: all .35s;
-}
-
-.icon {
-  width: 50px;
-  height: 30px;
-  border: 3px solid transparent;
-  position: absolute;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  right: 0;
-  top: 0;
-  z-index: -1;
-  -webkit-transition: all .35s;
-  transition: all .35s;
-}
-
-.icon svg {
-  width: 30px;
-  position: absolute;
-  top: calc(50% - 15px);
-  left: calc(50% - 15px);
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  fill: #2ecc71;
-  -webkit-transition: all .35s;
-  transition: all .35s;
-}
-
-#b:hover {
-  width: 50px;
-  border: 3px solid #2ecc71;
-  background: transparent;
-  color: #2ecc71;
-}
-
-#b:hover + .icon {
-  border: 3px solid #2ecc71;
-  right: -25%;
 }
 /*# sourceMappingURL=todoapp.css.map */

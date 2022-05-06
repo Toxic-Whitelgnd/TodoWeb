@@ -9,26 +9,32 @@
 <hr></hr>
 
 <div class="homeheader">
-    <p id="hello">Hello 👋🏻 </p> <p id="nameee"> {{name}}</p>.
+    <h4 id="hello">Hello 👋🏻  {{name}}</h4>.
     {% if email != None  %}
         <p id="email">{{email}} </p>
     {% endif %}
 </div> 
+    {% if user.is_authenticated %}
     <span class="wrapper">
     <a href="{% url 'login' %}" target="_blank"  class="button four">Logout</a>
     </span>
+    {% else %}
+    <div>
+    </div>
+    {% endif %}
 
 <hr></hr>
 
 
 
 
-    {% if user.is_authenticated %}
+{% if user.is_authenticated %}
     <div class="boxxcontainer">
         <div class="link-effect-10">
             <a   href="{% url 'tasks' %}">
             <span>Create Todo</span></a> 
         </div>
+        
        
     </div>
    
@@ -38,14 +44,32 @@
     
 
     {% else %}
-    <a href="{% url 'register' %}">register</a>
-    <a href="{% url 'login' %}">Login</a>
-    <a href="{% url 'tasks' %}">Create TOdO</a>
+
+    <div  class="boxxcontainer-bxx">
+        <div class="link-effect-10">
+            <a   href="{% url 'tasks' %}">
+            <span>Create Todo</span></a> 
+        </div>
+        <div class="link-effect-14">
+            <a   href="{% url 'register' %}">
+                <span>Register</span></a> 
+        </div>
+        <div class="link-effect-10">
+            <a   href="{% url 'login' %}">
+                <span>Login</span></a> 
+        </div>
+
+       
+    </div>
+  
+    
 
     {% endif %}
-    <div>
-        <p class="wholelist">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-             but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <div class="wholelist">
+        <h4>About ToDo</h4>
+        <p >ToDo List App is a kind of app that generally used to maintain our day-to-day tasks or list everything that
+            we have to do, with the most important tasks at the top of the list, and the least important tasks at the bottom. It is helpful in planning
+            our daily schedules. We can add more tasks at any time and delete a task that is completed.</p>
     </div>
 
     <footer class="footer">
