@@ -4,6 +4,13 @@
 
 
 html {
+  overflow-x: hidden;
+  background-repeat: no-repeat;
+  -webkit-transition: all 500ms ease;
+-moz-transition: all 500ms ease;
+-ms-transition: all 500ms ease;
+-o-transition: all 500ms ease;
+transition: all 500ms ease;
 }
 :root {
   --color-red: #ec1840;
@@ -45,7 +52,9 @@ body {
 
 /* footer section */
 .footer{
-  display: flex;
+  
+  padding:10px;
+  height:130px;
   justify-content: center;
   text-align: center;
   align-items: center;
@@ -54,6 +63,102 @@ body {
 .footer p{
   color:whitesmoke;
 }
+// socila media styling
+.wrapper-footer {
+  display: inline-flex;
+  list-style: none;
+}
+
+.wrapper-footer .icon {
+  position: relative;
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper-footer .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper-footer .tooltip::before {
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  background: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper-footer .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper-footer .icon:hover span,
+.wrapper-footer .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper-footer .facebook:hover,
+.wrapper-footer .facebook:hover .tooltip,
+.wrapper-footer .facebook:hover .tooltip::before {
+  background: #1877F2;
+  color: #ffffff;
+}
+
+.wrapper-footer .twitter:hover,
+.wrapper-footer .twitter:hover .tooltip,
+.wrapper-footer .twitter:hover .tooltip::before {
+  background: #fc0303;
+  color: #ffffff;
+}
+
+.wrapper-footer .instagram:hover,
+.wrapper-footer .instagram:hover .tooltip,
+.wrapper-footer .instagram:hover .tooltip::before {
+  background: #E4405F;
+  color: #ffffff;
+}
+
+.wrapper-footer .github:hover,
+.wrapper-footer .github:hover .tooltip,
+.wrapper-footer .github:hover .tooltip::before {
+  background: #333333;
+  color: #ffffff;
+}
+
+.wrapper-footer .youtube:hover,
+.wrapper-footer .youtube:hover .tooltip,
+.wrapper-footer .youtube:hover .tooltip::before {
+  background: #CD201F;
+  color: #ffffff;
+}
+
 /* for home pages */
 .boxxcontainer {
   background-color: #15d6a6;
@@ -90,6 +195,7 @@ body {
 		padding: 10px;
 		position: relative;
     text-decoration: none;
+    animation-delay:4s;
 		transition:.3s ease-out .1s;
 		span{
 			&::before{
@@ -100,8 +206,9 @@ body {
 				position: absolute;
 				left: 0;
 				top: 0;
+        animation-delay:4s;
 				transform:scaleY(0);
-				transition: .3s;
+				transition: .6s;
 			}
 			&::after{
 				height: 100%;
@@ -111,8 +218,9 @@ body {
 				position: absolute;
 				right: 0;
 				top: 0;
+        animation-delay:4s;
 				transform:scaleY(0);
-				transition: .3s;
+				transition: .6s;
 			}
 		}
 		&::before {
@@ -123,8 +231,9 @@ body {
 			position: absolute;
 			left: 0;
 			top: 0;
+      animation-delay:4s;
 			transform:scaleY(0);
-      transition: .3s;
+      transition: .6s;
 		}
 		&::after {
 			height: 2px;
@@ -134,19 +243,22 @@ body {
 			position: absolute;
 			left: 0px;
 			bottom: 0;
+      animation-delay:4s;
 			transform:scaleY(0);
-			transition: .3s;
+			transition: .6s;
 		}
 		&:hover{
 			color: white;
 			&::before,
 			&::after {
         transform:scaleY(1);
+        animation-delay:4s;
 			}
 			span{
 				&::before,
 				&::after {
           transform:scaleY(1);
+          animation-delay:4s;
 				}
 			}
 		}
@@ -175,7 +287,7 @@ a.button.four:before, a.button.four:after{
 	width: 0%;
 	// height: 10px;
 	border-bottom: 2px solid white;
-	transition: width 0.3s ease;
+	transition: width 0.6s ease;
 }
 
 a.button.four:before{
@@ -188,7 +300,7 @@ a.button.four:after{
 }
 a.button.four:hover:after, a.button.four:hover:before{
 	width: 40%;
-	transition: width .2s ease;
+	transition: width .6s ease;
 }
 // home bttnn
 .link-effect-14 {
@@ -213,7 +325,7 @@ a.button.four:hover:after, a.button.four:hover:before{
 				top: 0;
 				border-top: 2px solid white;
 				border-left: 2px solid white;
-				transition: .3s;
+				transition: .6s;
 				opacity: 0;
 			}
 			&::after{
@@ -226,7 +338,7 @@ a.button.four:hover:after, a.button.four:hover:before{
 				bottom: 0;
 				border-right: 2px solid white;
 				border-bottom: 2px solid white;
-			  transition: .3s;
+			  transition: .6s;
 				opacity: 0;
 
 			}
@@ -241,7 +353,7 @@ a.button.four:hover:after, a.button.four:hover:before{
 			top: 0;
 			border-right: 2px solid white;
 			border-top: 2px solid white;
-		  transition: .3s;
+		  transition: .6s;
 			opacity: 0;
 		}
 		&::after {
@@ -254,7 +366,7 @@ a.button.four:hover:after, a.button.four:hover:before{
 			bottom: 0;
 			border-left: 2px solid white;
 			border-bottom: 2px solid white;
-			transition:.3s;
+			transition:.6s;
 			opacity: 0;
 		}
 		&:hover{
@@ -838,6 +950,7 @@ svg {
 .registerbtn {
   display: flex;
   justify-content: center;
+  margin-bottom:10px;
   align-items: center;
   text-align: center;
   border-radius: 12px;
@@ -992,5 +1105,121 @@ label {
 }
 label:after {
   content: ": ";
+}
+#noitem{
+  margin-bottom: 30px;
+}
+// for resizing yo mff
+@media only screen and (max-width: 600px) {
+  .boxxcontainer{
+    margin-left: 100px;
+  }
+  .tablecus{
+    margin-left:30px;
+  }
+  .description{
+    margin-left:150px;
+  }
+  .delete-container{
+    margin-left: 150px;
+  }
+  .upform{
+    margin-left: 80px;
+  }
+  #noitem{
+    margin-bottom: 30px;
+  }
+
+}
+// Mobile Responsive yoo mff
+@media only screen and (max-width: 480px){
+  .boxxcontainer-bxx{
+    margin-left: 0px;
+    width:280px;
+  }
+  .boxxcontainer{
+    margin-left: 0px;
+  }
+  // loginform
+  .upform{
+    margin-left:3px;
+    margin-right: 3px;
+    height:auto;
+  }
+  .registersetup{
+    border-radius: 24px;
+  }
+  // task list
+  .boxxcontainer{
+    margin-left:10px;
+    width: 250px;
+  }
+  // search container
+  .search-container{
+
+  }
+  .searchbox{
+    width:150px;
+
+  }
+  // table content
+  th{
+    padding-left:60px ;
+    padding-right:60px ;
+    max-width:300px;
+  }
+  .tablecus{
+    margin-left:12px;
+    max-width:100px;
+    height:100px;
+  }
+  .lsheader{
+    max-width: 200px;
+  }
+  .itmeliststab{
+    padding:0px;
+
+  }
+  .tasktitle{
+    margin:0px 0px 0px 3px; 
+    padding:5px;
+  }
+  .countitem{
+    max-width: 240px;
+  }
+ 
+  // addtask btn
+  .addtaskbox{
+    margin:15px 0px 50px 0px;
+  }
+  #noitem{
+    margin-bottom: 25px;
+  }
+  // addtask list form
+  #id_description{
+    max-width:260px;
+  }
+  // delete task
+  .delete-container{
+    margin-left: 5px;
+    margin-right: 5px;
+    width:290px;
+  }
+  // deatails of the task
+  .description{
+    margin-left: 5px;
+    margin-right: 5px;
+    width:290px;
+  }
+
+  // footer editing
+  .wrapper-footer .icon {
+    width:30px;
+    height:30px;
+    margin:4px;
+  }
+
+  
+
 }
 

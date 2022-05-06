@@ -1,4 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+html {
+  overflow-x: hidden;
+  background-repeat: no-repeat;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
 :root {
   --color-red: #ec1840;
   --color-purple: #7a18ec;
@@ -46,9 +53,8 @@ body {
 
 /* footer section */
 .footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  padding: 10px;
+  height: 130px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -61,6 +67,118 @@ body {
 
 .footer p {
   color: whitesmoke;
+}
+
+.wrapper-footer {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  list-style: none;
+}
+
+.wrapper-footer .icon {
+  position: relative;
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  -webkit-transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper-footer .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper-footer .tooltip::before {
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  background: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  -webkit-transform: translate(-50%) rotate(45deg);
+          transform: translate(-50%) rotate(45deg);
+  -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper-footer .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper-footer .icon:hover span,
+.wrapper-footer .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper-footer .facebook:hover,
+.wrapper-footer .facebook:hover .tooltip,
+.wrapper-footer .facebook:hover .tooltip::before {
+  background: #1877F2;
+  color: #ffffff;
+}
+
+.wrapper-footer .twitter:hover,
+.wrapper-footer .twitter:hover .tooltip,
+.wrapper-footer .twitter:hover .tooltip::before {
+  background: #fc0303;
+  color: #ffffff;
+}
+
+.wrapper-footer .instagram:hover,
+.wrapper-footer .instagram:hover .tooltip,
+.wrapper-footer .instagram:hover .tooltip::before {
+  background: #E4405F;
+  color: #ffffff;
+}
+
+.wrapper-footer .github:hover,
+.wrapper-footer .github:hover .tooltip,
+.wrapper-footer .github:hover .tooltip::before {
+  background: #333333;
+  color: #ffffff;
+}
+
+.wrapper-footer .youtube:hover,
+.wrapper-footer .youtube:hover .tooltip,
+.wrapper-footer .youtube:hover .tooltip::before {
+  background: #CD201F;
+  color: #ffffff;
 }
 
 /* for home pages */
@@ -115,6 +233,8 @@ body {
   padding: 10px;
   position: relative;
   text-decoration: none;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
   -webkit-transition: .3s ease-out .1s;
   transition: .3s ease-out .1s;
 }
@@ -127,10 +247,12 @@ body {
   position: absolute;
   left: 0;
   top: 0;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
   -webkit-transform: scaleY(0);
           transform: scaleY(0);
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: .6s;
+  transition: .6s;
 }
 
 .link-effect-10 a span::after {
@@ -141,10 +263,12 @@ body {
   position: absolute;
   right: 0;
   top: 0;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
   -webkit-transform: scaleY(0);
           transform: scaleY(0);
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: .6s;
+  transition: .6s;
 }
 
 .link-effect-10 a::before {
@@ -155,10 +279,12 @@ body {
   position: absolute;
   left: 0;
   top: 0;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
   -webkit-transform: scaleY(0);
           transform: scaleY(0);
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: .6s;
+  transition: .6s;
 }
 
 .link-effect-10 a::after {
@@ -169,10 +295,12 @@ body {
   position: absolute;
   left: 0px;
   bottom: 0;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
   -webkit-transform: scaleY(0);
           transform: scaleY(0);
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: .6s;
+  transition: .6s;
 }
 
 .link-effect-10 a:hover {
@@ -182,11 +310,15 @@ body {
 .link-effect-10 a:hover::before, .link-effect-10 a:hover::after {
   -webkit-transform: scaleY(1);
           transform: scaleY(1);
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
 }
 
 .link-effect-10 a:hover span::before, .link-effect-10 a:hover span::after {
   -webkit-transform: scaleY(1);
           transform: scaleY(1);
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
 }
 
 .wrapper {
@@ -211,8 +343,8 @@ a.button.four:before, a.button.four:after {
   position: absolute;
   width: 0%;
   border-bottom: 2px solid white;
-  -webkit-transition: width 0.3s ease;
-  transition: width 0.3s ease;
+  -webkit-transition: width 0.6s ease;
+  transition: width 0.6s ease;
 }
 
 a.button.four:before {
@@ -227,8 +359,8 @@ a.button.four:after {
 
 a.button.four:hover:after, a.button.four:hover:before {
   width: 40%;
-  -webkit-transition: width .2s ease;
-  transition: width .2s ease;
+  -webkit-transition: width .6s ease;
+  transition: width .6s ease;
 }
 
 .link-effect-14 a {
@@ -256,8 +388,8 @@ a.button.four:hover:after, a.button.four:hover:before {
   top: 0;
   border-top: 2px solid white;
   border-left: 2px solid white;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: .6s;
+  transition: .6s;
   opacity: 0;
 }
 
@@ -271,8 +403,8 @@ a.button.four:hover:after, a.button.four:hover:before {
   bottom: 0;
   border-right: 2px solid white;
   border-bottom: 2px solid white;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: .6s;
+  transition: .6s;
   opacity: 0;
 }
 
@@ -286,8 +418,8 @@ a.button.four:hover:after, a.button.four:hover:before {
   top: 0;
   border-right: 2px solid white;
   border-top: 2px solid white;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: .6s;
+  transition: .6s;
   opacity: 0;
 }
 
@@ -301,8 +433,8 @@ a.button.four:hover:after, a.button.four:hover:before {
   bottom: 0;
   border-left: 2px solid white;
   border-bottom: 2px solid white;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: .6s;
+  transition: .6s;
   opacity: 0;
 }
 
@@ -1108,6 +1240,7 @@ svg {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 10px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1293,5 +1426,102 @@ label {
 
 label:after {
   content: ": ";
+}
+
+#noitem {
+  margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  .boxxcontainer {
+    margin-left: 100px;
+  }
+  .tablecus {
+    margin-left: 30px;
+  }
+  .description {
+    margin-left: 150px;
+  }
+  .delete-container {
+    margin-left: 150px;
+  }
+  .upform {
+    margin-left: 80px;
+  }
+  #noitem {
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .boxxcontainer-bxx {
+    margin-left: 0px;
+    width: 280px;
+  }
+  .boxxcontainer {
+    margin-left: 0px;
+  }
+  .upform {
+    margin-left: 3px;
+    margin-right: 3px;
+    height: auto;
+  }
+  .registersetup {
+    border-radius: 24px;
+  }
+  .boxxcontainer {
+    margin-left: 10px;
+    width: 250px;
+  }
+  .searchbox {
+    width: 150px;
+  }
+  th {
+    padding-left: 60px;
+    padding-right: 60px;
+    max-width: 300px;
+  }
+  .tablecus {
+    margin-left: 12px;
+    max-width: 100px;
+    height: 100px;
+  }
+  .lsheader {
+    max-width: 200px;
+  }
+  .itmeliststab {
+    padding: 0px;
+  }
+  .tasktitle {
+    margin: 0px 0px 0px 3px;
+    padding: 5px;
+  }
+  .countitem {
+    max-width: 240px;
+  }
+  .addtaskbox {
+    margin: 15px 0px 50px 0px;
+  }
+  #noitem {
+    margin-bottom: 25px;
+  }
+  #id_description {
+    max-width: 260px;
+  }
+  .delete-container {
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 290px;
+  }
+  .description {
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 290px;
+  }
+  .wrapper-footer .icon {
+    width: 30px;
+    height: 30px;
+    margin: 4px;
+  }
 }
 /*# sourceMappingURL=todoapp.css.map */

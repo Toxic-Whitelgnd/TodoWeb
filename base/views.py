@@ -10,7 +10,15 @@ from django.urls import reverse_lazy
 
 from django.contrib.auth.mixins import LoginRequiredMixin #this will restrict the user to view thec ontent without login
 
+# for mailing
+import schedule
+import time
+
 # Create your views here.
+
+def mailit(user,email):
+    print(user,email)
+
 
 def home(request):
     username = None
@@ -20,6 +28,9 @@ def home(request):
         email = request.user.email
         print(username)
         print(email)
+        mailit(username,email)
+
+        # schedule.every(5).seconds.do(mailit(username,email))
     else:
         username = "Guest"
     context = {'name':username,'email':email}
@@ -72,6 +83,9 @@ class TaskDelete(DeleteView):
     context_object_name = 'task'
     success_url = reverse_lazy('tasks')
 
+
+
+    
 
 
 

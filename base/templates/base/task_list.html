@@ -44,8 +44,17 @@
 
 <table class="tablecus">
     <tr class="lsheader">
-        <th>Item Lists
-       <p class="countitem"> <b class="itmecount"> {{count}} </b> Incomplete Tasks in your lists.</p></th>
+        <th>  
+      
+
+        {% if count == 0 %}
+        <p class="countitem">Lets Create Task!.Keep Setting your Goal!</p>
+
+        {% else %}
+        <p class="countitem"> <b class="itmecount"> {{count}} </b> Incomplete Tasks in your lists.</p></th>
+        {% endif %}
+
+       
        
     </tr>
     
@@ -94,7 +103,7 @@
     {% endif %}
    
     {% empty %}
-        <h2>No items</h2>
+        <h2 id="noitem">No items</h2>
     {% endfor %}
     
 
