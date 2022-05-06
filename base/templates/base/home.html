@@ -1,35 +1,56 @@
 {% extends 'main.html' %}
 
-<a href="{% url 'register' %}">register</a>
-<a href="{% url 'login' %}">Login</a>
+
 
 {% block content %}
 
-<h1>hello from home via main</h1>
 
-    <h5>hello {{name}} </h5>
-    <h4>hello {{email}} </h4>
+
+<hr></hr>
+
+<div class="homeheader">
+    <p id="hello">Hello 👋🏻 </p> <p id="nameee"> {{name}}</p>.
+    {% if email != None  %}
+        <p id="email">{{email}} </p>
+    {% endif %}
+</div> 
+    <span class="wrapper">
+    <a href="{% url 'login' %}" target="_blank"  class="button four">Logout</a>
+    </span>
+
+<hr></hr>
+
+
+
 
     {% if user.is_authenticated %}
-
-    {% for ls in form  %}
-
-    <a href="{% url 'create-item' ls.id  %}" >
-        {{ls.name}}
-        {{ls.id}}
-        <br></br
-    </a>
+    <div class="boxxcontainer">
+        <div class="link-effect-10">
+            <a   href="{% url 'tasks' %}">
+            <span>Create Todo</span></a> 
+        </div>
+       
+    </div>
+   
     
-    {% endfor %}
-
-    <a href="{%  url 'create-todo' %}">create</a>
-    <a href="{% url 'logout' %}">Logout</a>
+    
+    
+    
 
     {% else %}
     <a href="{% url 'register' %}">register</a>
     <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'tasks' %}">Create TOdO</a>
 
     {% endif %}
+    <div>
+        <p class="wholelist">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+             but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+
+    <footer class="footer">
+        <p>copyright  2022. By Pain</p>
+    </footer>
    
     
 

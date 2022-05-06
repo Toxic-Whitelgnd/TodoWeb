@@ -12,6 +12,20 @@ from django.contrib.auth.mixins import LoginRequiredMixin #this will restrict th
 
 # Create your views here.
 
+def home(request):
+    username = None
+    email = None
+    if request.user.is_authenticated:
+        username = request.user.username
+        email = request.user.email
+        print(username)
+        print(email)
+    else:
+        username = "Guest"
+    context = {'name':username,'email':email}
+    return render(request,'base/home.html',context)
+
+
 class TaskList(LoginRequiredMixin,ListView):
     model = Task
     context_object_name = 'tasks' 

@@ -12,7 +12,8 @@
 
     <div class="ln">
         <p class="welcome">Hello  <b id="username"> {{request.user.username}}</b>!</p> 
-        <a id="logoutbtn" href="{% url 'logout' %}">Logout</a>
+
+        <a id="logoutbtn" href="{% url 'home' %}">Home</a>
     </div>
 </div>
 
@@ -22,14 +23,21 @@
 <form method="GET">
     <div class="search-container">
         <input class="searchbox" type="text" name="search-task" placeholder="🔎Search" value="{{search_input}}" />
-        <button class="searchbtn"   type="sumbit" value="Sumbit">Search</button>
+        <a href="/"><button class="bn632-hover bn19" type="sumbit" value="Sumbit">Search</button></a>
         
     </div>
+
+    
+
 </form>    
 
 <div class="addtaskbox">
-<a class="addtask" href="{% url 'task-create'%} ">Add Task</a>
+    <span class="wrapper">
+        <a href="{% url 'task-create' %}" target="_blank"  class="button one">Add Task</a>
+    </span>
 </div>
+
+
 
 <table class="tablecus">
     <tr class="lsheader">
