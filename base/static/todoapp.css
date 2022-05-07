@@ -47,8 +47,9 @@ body {
   font-size: 20px;
 }
 
-#nameee {
+#nmee {
   text-transform: capitalize;
+  color: orange;
 }
 
 /* footer section */
@@ -506,7 +507,7 @@ h2 {
 #username {
   -webkit-animation-name: fkk;
           animation-name: fkk;
-  color: red;
+  color: #ff7300;
   text-transform: capitalize;
 }
 

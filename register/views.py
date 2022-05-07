@@ -20,7 +20,7 @@ def register_user(request):
             messages.success(request,"Regestration Successfull")
             return redirect('/')
         else:
-            messages.error(request,"Eroor")
+            messages.error(request,"password is too common,try new passoword and give a valid email address")
             print("password is too common,try new passowrd and give a valid email address")
     
     form = NewuserForm()
@@ -36,13 +36,13 @@ def login_user(request):
             user = authenticate(username=username,password=password)
             if user is not None:
                 login(request,user)
-                messages.success(request,"You are now logged in with the same username ")
+                messages.success(request,"Looged in successful ")
                 return redirect('/')
             else:
-                messages.error(request,"mother fucker")
+                messages.error(request,"Invalid Username or Password")
                 print('fk this shit')
         else:
-            messages.error(request,"sdfsdf sdfsdf ")
+            messages.error(request,"Invalid Password or Username")
             print('username is wrong or password is wrong')
 
     form = AuthenticationForm()
@@ -50,4 +50,5 @@ def login_user(request):
 
 def logout_user(request):
     logout(request)
+    messages.success(request,"Logout Succesfull")
     return redirect('/')

@@ -44,11 +44,11 @@ body {
   display:flex;
   font-size:20px;
 }
-#nameee{
+#nmee{
  
   text-transform: capitalize;
-
-}
+  color:orange;
+} 
 
 /* footer section */
 .footer{
@@ -421,7 +421,7 @@ h2 {
 }
 #username {
   animation-name: fkk;
-  color: red;
+  color: rgb(255, 115, 0);
   text-transform: capitalize;
 }
 @keyframes fkk {

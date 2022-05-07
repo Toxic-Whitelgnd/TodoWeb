@@ -1,5 +1,5 @@
 {% extends 'main.html' %}
-
+{% include 'register\msessg.html' %}
 
 
 {% block content %}
@@ -9,7 +9,7 @@
 <hr></hr>
 
 <div class="homeheader">
-    <h4 id="hello">Hello 👋🏻  {{name}}</h4>.
+    <h4 id="hello">Hello 👋🏻 <i id="nmee"> {{name}}</i></h4>.
     {% if email != None  %}
         <p id="email">{{email}} </p>
     {% endif %}
